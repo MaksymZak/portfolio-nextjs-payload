@@ -14,19 +14,17 @@ export default async function RootLayout({
 }) {
   const pathname = usePathname();
   return (
-    <div>
-      <AnimatePresence mode="wait">
-        <motion.div key={pathname}>
-          <div className="page relative bg-site bg-cover bg-no-repeat text-white">
-            <Transition />
-            <Nav />
-            <Header />
-            <TopLeftImg />
+    <AnimatePresence mode="wait">
+      <motion.div key={pathname}>
+        <div className="page relative flex flex-col bg-site bg-cover bg-no-repeat text-white">
+          <Transition />
+          <Nav />
+          <Header />
+          <TopLeftImg />
 
-            {children}
-          </div>
-        </motion.div>
-      </AnimatePresence>
-    </div>
+          {children}
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
